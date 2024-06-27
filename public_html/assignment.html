@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang= 0 ><head><style>body{font-family:Tahoma, Geneva, sans-serif; margin-left:100px; margin-right:100px; margin-top:50px;margin-bottom:50px;}</style>
+<title>Assignment</title></head><body>
+<style>
+h1.ee{color:#003399; text-align:left; border-bottom-style:solid; font-size:40px;}
+h2.ee{color:#555555; text-align:left; border-bottom-style:solid;}
+p.ee{ line-height:150%; font-size:20px;}
+table.ee{border-collapse:collapse; border: 1px solid black; }
+th.ee{padding:5px;border: 1px solid black;background-color:#003399; color:white; }
+th.ee2{text-align:left; padding:5px;border: 0px solid black; background-color:#EEEEEE;color:#666666;font-weight:normal; }
+th.ee1{padding:5px;border: 1px solid black;background-color:#AAAAAA; color:white; }
+td.ee{padding:10px; border: 1px solid black;}
+td.task{font-weight:bold; text-align:center;border: 1px solid black;}
+td.points{ text-align:center;}
+td.taskDone{font-weight:bold; text-align:center;background-color:#cccccc;padding:10px; border: 1px solid black;}
+.eeerror{ color:#800000;margin-left: 10px;}
+.comment{ color:#444444;margin-left: 10px;}
+</style>
+<h1 class=ee>Getting Data into Access</h1>
+<p class=ee>This assignment has a total of 100 points.</p>
+<p class=ee>Do not insert or modify tables, fields, or records unless instructed to do so. The grader relies on the current database structure and records for grading. </p>
+<p class=ee>This database is a part of cookbook project. The single table is just the list of recipes.  Tables holding information about ingredients and nutrition are omitted for simplicity of this practice exercise.</p>
+<h2 class=ee>Working with Tables</h2>
+<p class=ee>Imagine that you want to add the ability to keep track of reviews made of the recipes.  As people try the different recipes in this database, you need to provide for them a table to enter a review of how the recipe turned out.  You will need to collect the date of the review, a rating (0-5 stars), and the name of the person doing the review on the new table.  The tasks below will guide you through the process.</p>
+<table class=ee><table class=ee><tr><th class=ee>Task&nbsp;#</th><th class=ee>Points</th><th class=ee>Task Description</th></tr>
+<tr><td class="task">1</td><td class="ee points">
+68</td><td class=ee>
+Create a new table named “Review” in Access with the following structure.
+<br><br><style> td.ee1{padding:2px; border: 1px solid black;} </style><center><style> td.ee1{padding:2px; border: 1px solid black;}</style><table class=ee><tr><td class=ee1 valign=bottom bgcolor=#D9D9D9><b>Field Name</b></td><td class=ee1 valign=bottom bgcolor=#D9D9D9><b>Data Type</b></td><td class=ee1 valign=bottom bgcolor=#D9D9D9><b>Other</b></td></tr><tr><td class=ee1 valign=bottom>ReviewID</td><td class=ee1 valign=bottom>AutoNumber</td><td class=ee1 valign=bottom>Primary Key</td></tr><tr><td class=ee1 valign=bottom>ReviewDate</td><td class=ee1 valign=bottom>Date/Time</td><td class=ee1 valign=bottom>Input Mask: Short Date</td></tr><tr><td class=ee1 valign=bottom>ReviewerName</td><td class=ee1 valign=bottom>Short Text</td><td class=ee1 valign=bottom></td></tr><tr><td class=ee1 valign=bottom>ReviewText</td><td class=ee1 valign=bottom>Long Text</td><td class=ee1 valign=bottom></td></tr><tr><td class=ee1 valign=bottom>ReviewStars</td><td class=ee1 valign=bottom>Number</td><td class=ee1 valign=bottom>Field Size: Byte</td></tr><tr><td class=ee1 valign=bottom>RecipeID</td><td class=ee1 valign=bottom>Number</td><td class=ee1 valign=bottom>Field Size: Long Integer</td></tr></table></center></td></tr>
+<tr><td class="task">2</td><td class="ee points">
+16</td><td class=ee>
+Add a validation rule to the ReviewStars field that allows only values between 0 and 5 (inclusive) to be entered. Since the data type for this field is Byte (which does not allow a negative number), your validation must only ensure that a value must be less than or equal to 5.
+</td></tr>
+<tr><td class="task">3</td><td class="ee points">
+4</td><td class=ee>
+Use the “Relationships” window to inform Access of the following Primary Key, Foreign Key pair: RecipeID in the Review table references the Recipe Table.&nbsp;&nbsp;Also, enforce referential integrity for this new relationship.
+</td></tr>
+<tr><td class="task">4</td><td class="ee points">
+4</td><td class=ee>
+Enter the following information into the Review table: <br>
+<br><br><style> td.ee1{padding:2px; border: 1px solid black;} </style><center><style> td.ee1{padding:2px; border: 1px solid black;}</style><table class=ee><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewDate</b></td><td class=ee1 valign=bottom>7 /4 /2013</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewerName</b></td><td class=ee1 valign=bottom>Holly Lucas</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewText</b></td><td class=ee1 valign=bottom>This is one of my favorite recipes. It's a great party dish&nbsp;and always gets rave reviews. I use only about half of the jalapeno peppers called for.</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewStars</b></td><td class=ee1 valign=bottom>5</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>RecipeID</b></td><td class=ee1 valign=bottom>1034</td></tr></table></center></td></tr>
+<tr><td class="task">5</td><td class="ee points">
+4</td><td class=ee>
+Enter the following information into the Review table: <br>
+<br><br><style> td.ee1{padding:2px; border: 1px solid black;} </style><center><style> td.ee1{padding:2px; border: 1px solid black;}</style><table class=ee><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewDate</b></td><td class=ee1 valign=bottom>7 /15/2013</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewerName</b></td><td class=ee1 valign=bottom>Elary Hall</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewText</b></td><td class=ee1 valign=bottom>Smelled good cooking, but the end result was meat that&nbsp;rivaled tire rubber - extremely tough, dry, and inedible. We ended up going out to dinner.</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewStars</b></td><td class=ee1 valign=bottom>1</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>RecipeID</b></td><td class=ee1 valign=bottom>543</td></tr></table></center></td></tr>
+<tr><td class="task">6</td><td class="ee points">
+4</td><td class=ee>
+Enter the following information into the Review table: <br>
+<br><br><style> td.ee1{padding:2px; border: 1px solid black;} </style><center><style> td.ee1{padding:2px; border: 1px solid black;}</style><table class=ee><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewDate</b></td><td class=ee1 valign=bottom>7 /18/2013</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewerName</b></td><td class=ee1 valign=bottom>Joel Helgeson</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewText</b></td><td class=ee1 valign=bottom>This is one of the BEST party recipes ever!&nbsp;Flavors are amazing!</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>ReviewStars</b></td><td class=ee1 valign=bottom>5</td></tr><tr><td class=ee1 valign=top bgcolor=#D9D9D9><b>RecipeID</b></td><td class=ee1 valign=bottom>1377</td></tr></table></center></td></tr>
+<tr><td class=ee>Total:</td><td class="ee points">
+100
+</td><td class=ee>
+</td></tr>
+</table>
+
+</body></html>
